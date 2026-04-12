@@ -1,0 +1,29 @@
+﻿@model IEnumerable<dynamic>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Appointments</h2>
+
+    <table class="table table-bordered table-striped table-hover text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Patient Name</th>
+                <th>Doctor</th>
+                <th>Specialization</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PatientName</td>
+                    <td>@item.DoctorName</td>
+                    <td>@item.Specialization</td>
+                    <td>@item.Date.ToShortDateString()</td>
+                    <td>@item.Time</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

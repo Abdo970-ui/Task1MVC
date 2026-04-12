@@ -1,0 +1,46 @@
+﻿@using Task1MVC.Models
+@{
+    var doctor = ViewBag.Doctor as Doctor;
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center">
+                    <h4>Book Appointment</h4>
+                </div>
+
+                <div class="card-body">
+                    <p><strong>Doctors:</strong> @doctor.Name</p>
+                    <p><strong>Specialization:</strong> @doctor.Specialization</p>
+
+                    <form method="post">
+                        <input type="hidden" name="DoctorId" value="@doctor.Id" />
+
+                        <div class="mb-3">
+                            <label class="form-label">Patient Name</label>
+                            <input type="text" name="PatientName" class="form-control" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Date</label>
+                            <input type="date" name="Date" class="form-control" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Time</label>
+                            <input type="time" name="Time" class="form-control" required />
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Confirm Appointment
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
